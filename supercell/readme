@@ -1,0 +1,23 @@
+# by mshi
+# To generate a supercell pdb file use an unit cell pdb file
+
+1. Prepared files
+
+1.1 An unitcell pdb file is needed. The file format follows the format of the unitcell.pdb in the example.
+
+1.2 Set up the parameter.in file correctly.
+    In the parameter.in file:
+    The first line 'nxl,nyl,nzl' represent the number of cells extending along the lattice direction. (for example, 
+    if nxl=2, it shows that the crystal cell will expand two cells in the negative and positive directions of a. So
+    when nxl=2, nyl=2, nzl=2, it represents a 5*5*5 supercell will be built.
+    The second line 'number of atoms' is the number of atoms in an unit cell.
+    The third line 'Lattice constant' is the lattice constant(a, b, c) of a crystal.
+    The last line 'angle' is the angle of the crystal.
+
+2. Usage
+
+2.1 Compile the program using the command 'make'. (Note the makefile! Be sure the command 'ifort' you can use)And then    an executable file 'supercell.x' is generated.
+2.2 Execut the program. You can run the program using the command './supercell.x'. After that two files will be obtained. ('newcell.inpcrd' and 'newcell.pdb') The 'newcell.pdb' file is the supercell pdb file.
+
+3. The format of the output file
+   The default output order of pdb is from unit cell (-1,-1,-1) to (1,1,1).
